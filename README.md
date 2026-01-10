@@ -105,10 +105,8 @@ This aligns moderation with **collective confirmation** rather than unilateral a
 
 As part of the PoC, lobby configuration constraints are adjusted:
 
-* Max players range increased (7–15)
-* Demonstrates how safety and gameplay changes can coexist
-
-(This is not a core safety feature, but included to show extensibility.)
+* Minimum lobby size enforced at 7 players (max 15)
+* 4–6 player lobbies, which are frequently abused and significantly harder to moderate, are no longer creatable
 
 ---
 
