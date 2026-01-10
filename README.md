@@ -108,6 +108,8 @@ As part of the PoC, lobby configuration constraints are adjusted:
 * Minimum lobby size enforced at 7 players (max 15)
 * 4–6 player lobbies, which are frequently abused and significantly harder to moderate, are no longer creatable
 
+This demonstrates how safety constraints can coexist with normal gameplay configuration.
+
 ---
 
 ## Architecture Overview
