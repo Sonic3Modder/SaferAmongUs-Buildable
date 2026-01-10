@@ -1,6 +1,6 @@
 # SaferAmongUs
 
-SaferAmongUs is a **proof-of-concept (PoC) client-side moderation and safety layer for Among Us**, built to demonstrate how chat abuse, dating/sexual solicitation, and unsafe lobby behaviors can be mitigated directly at the game level using Harmony patches.
+SaferAmongUs is a **proof-of-concept (PoC) client-side moderation and safety layer for Among Us**, built to demonstrate how chat abuse, dating/sexual solicitation, and unsafe lobby behaviors can be mitigated directly at the game level.
 
 This project is **not intended as a cheat, exploit, or gameplay modification**, but as a **technical demonstration for Innersloth** of how moderation, reporting, and lobby-safety features could be integrated more deeply and effectively than simple word filters.
 
