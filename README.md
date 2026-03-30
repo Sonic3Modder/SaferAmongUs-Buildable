@@ -198,4 +198,4 @@ Clone the repo (or source code's release website) by running ```git clone https:
 
 This project was created to start a **technical discussion**, not to bypass systems.
 
-If you are part of Innersloth or interested in moderation tooling, feel free to reach out at `matchducking@proton.me` for a deeper technical breakdown.
+If you are part of Innersloth or interested in moderation tooling, feel free to reach out at `matchducking@proton.me` for a deeper technical breakdown. This is matchingducking's contact method, I do recommend starting a issue if you have a issue with this project
