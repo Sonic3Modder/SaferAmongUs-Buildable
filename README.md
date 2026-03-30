@@ -192,6 +192,14 @@ Git is also required as it 'clones' or copies the the source code of any git rep
 ### Building
 Clone the repo (or source code's release website) by running ```git clone https://github.com/Sonic3Modder/SaferAmongUs-Buildable``` on your PC by searching for command prompt on your windows menu and copying and pasting the command there, there will be some fancy output, nothing to worry about, its just debug info to see how its downloading. I assume that the linux users know how to do this. Now you need to type ```cd SaferAmongUS-Buildable``` and run ```dotnet build``` this will build it, once its build it should be in bin/net6.0 and the .dll should be in there. Thats it
 
+### Proton - Wine Setup
+#### Steam
+Right Click Among US on steam (in the search or if you are on the screen where you can press play, press the gear on the right and press properties), press properties, Then in General, look for launch options, copy and paste this to the launch options ```WINEDLLOVERRIDES="winhttp.dll=n,b" %command%```
+
+<img width="837" height="610" alt="image" src="https://github.com/user-attachments/assets/6b5c0007-6e5e-4c93-a664-b19faea25a50" />
+
+This will force proton/wine to run Bepinex (the mod loader) instead of the system dll.
+
 ---
 
 ## Contact
