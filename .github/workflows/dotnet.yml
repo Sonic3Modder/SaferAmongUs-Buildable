@@ -1,0 +1,82 @@
+name: Build SaferAmongUs
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        include:
+          # Windows
+          - os: windows-latest
+            label: windows
+
+          # macOS
+          - os: macos-latest
+            label: macos
+
+          # Debian/Ubuntu
+          - os: ubuntu-latest
+            label: linux-debian
+
+          # Arch Linux (container)
+          - os: ubuntu-latest
+            label: linux-arch
+            container: archlinux:latest
+
+          # Fedora (container)
+          - os: ubuntu-latest
+            label: linux-fedora
+            container: fedora:latest
+
+      fail-fast: false
+
+    runs-on: ${{ matrix.os }}
+    container: ${{ matrix.container || '' }}
+
+    name: Build (${{ matrix.label }})
+
+    steps:
+      # ── Arch: install git + dotnet ──────────────────────────────────────────
+      - name: Install dependencies (Arch)
+        if: matrix.label == 'linux-arch'
+        run: |
+          pacman -Syu --noconfirm
+          pacman -S --noconfirm git dotnet-sdk
+
+      # ── Fedora: install git + dotnet ────────────────────────────────────────
+      - name: Install dependencies (Fedora)
+        if: matrix.label == 'linux-fedora'
+        run: |
+          dnf install -y git dotnet-sdk-9.0
+
+      # ── Debian/Ubuntu: dotnet is pre-installed on ubuntu-latest ─────────────
+      # Nothing extra needed for debian/ubuntu or the hosted runners
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET (hosted runners only)
+        if: matrix.label != 'linux-arch' && matrix.label != 'linux-fedora'
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Restore
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore --configuration Release
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SaferAmongUs-${{ matrix.label }}
+          path: |
+            **/bin/Release/**/*.dll
+            !**/bin/Release/**/*Interop*.dll
