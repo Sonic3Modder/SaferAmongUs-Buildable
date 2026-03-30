@@ -182,6 +182,18 @@ Planned improvements:
 
 ---
 
+## Build
+### Prerequisites
+Download the 6.x .Net SDK, or the 9.x or newer .Net SDK (both work, 9.x+ has support for older sdks) 
+[6.x Installation Page](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+[9.x Installation Page](https://dotnet.microsoft.com/en-us/download/dotnet/9.0)
+Git is also required as it 'clones' or copies the the source code of any git repo hub (like github) onto your PC for you to modify in any way shape or fourm (if the codes license allows you), [Git's Download link](https://git-scm.com/install/)
+
+### Building
+Clone the repo (or source code's release website) by running ```git clone https://github.com/Sonic3Modder/SaferAmongUs-Buildable``` on your PC by searching for command prompt on your windows menu and copying and pasting the command there, there will be some fancy output, nothing to worry about, its just debug info to see how its downloading. I assume that the linux users know how to do this. Now you need to type ```cd SaferAmongUS-Buildable``` and run ```dotnet build``` this will build it, once its build it should be in bin/net6.0 and the .dll should be in there. Thats it
+
+---
+
 ## Contact
 
 This project was created to start a **technical discussion**, not to bypass systems.
