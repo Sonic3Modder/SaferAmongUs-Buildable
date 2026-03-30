@@ -198,6 +198,8 @@ Right Click Among US on steam (in the search or if you are on the screen where y
 
 <img width="837" height="610" alt="image" src="https://github.com/user-attachments/assets/6b5c0007-6e5e-4c93-a664-b19faea25a50" />
 
+(Ignore that I used PEAK)
+
 This will force proton/wine to run Bepinex (the mod loader) instead of the system dll.
 
 ---
